@@ -2,8 +2,8 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
-public class PositionType {
-
+public class PositionType extends JobField{
+/* SHARED
     private int id;
     private static int nextId = 1;
     private String value;
@@ -12,14 +12,15 @@ public class PositionType {
         id = nextId;
         nextId++;
     }
-
+*/
     public PositionType(String value) {
-        this();
-        this.value = value;
+//        this();
+//        this.value = value;
+        super(value);
     }
 
     // TODO: Add a custom toString() method that returns the data stored in 'value'.
-
+/*
     @Override
     public String toString() {
         return value;
@@ -54,5 +55,5 @@ public class PositionType {
     public void setValue(String value) {
         this.value = value;
     }
-
+ */
 }

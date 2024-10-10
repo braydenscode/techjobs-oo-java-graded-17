@@ -69,7 +69,7 @@ public class JobTest {
 
     @Test
     public void testToStringHandlesEmptyField() {
-        Job job8 = new Job("Product tester", new Employer("ACME"), new Location(), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job job8 = new Job("Product tester", new Employer("ACME"), new Location(""), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         int localId = job8.getId();
         String desired = System.lineSeparator() + "ID: " + localId + System.lineSeparator() +
                 "Name: Product tester" + System.lineSeparator() +
