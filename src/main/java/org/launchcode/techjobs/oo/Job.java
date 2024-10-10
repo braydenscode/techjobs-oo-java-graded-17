@@ -95,18 +95,24 @@ public class Job {
 
     @Override
     public String toString() {
+        //Optional all fields empty check.
+        if (name == null || name.isEmpty() &&
+                employer == null || employer.getValue() == null || employer.getValue().isEmpty() &&
+                location == null || location.getValue() == null || location.getValue().isEmpty() &&
+                positionType == null || positionType.getValue() == null || positionType.getValue().isEmpty() &&
+                coreCompetency == null || coreCompetency.getValue() == null || coreCompetency.getValue().isEmpty()
+        ) {
+            return "OOPS! This job does not seem to exist.";
+        } else {
 
-        if (employer == null || employer.getValue() == null || employer.getValue().isEmpty()) {
-
+            return System.lineSeparator() +
+                    "ID: " + id + System.lineSeparator() +
+                    "Name: " + (name == null || name.isEmpty() ? "Data not available" : name) + System.lineSeparator() +
+                    "Employer: " + ((employer == null || employer.getValue() == null || employer.getValue().isEmpty()) ? "Data not available" : employer) + System.lineSeparator() +
+                    "Location: " + ((location == null || location.getValue() == null || location.getValue().isEmpty()) ? "Data not available" : location) + System.lineSeparator() +
+                    "Position Type: " + ((positionType == null || positionType.getValue() == null || positionType.getValue().isEmpty()) ? "Data not available" : positionType) + System.lineSeparator() +
+                    "Core Competency: " + ((coreCompetency == null || coreCompetency.getValue() == null || coreCompetency.getValue().isEmpty()) ? "Data not available" : coreCompetency) +
+                    System.lineSeparator();
         }
-
-        return  System.lineSeparator() +
-                "ID: " + id + System.lineSeparator() +
-                "Name: " + (name == null || name.isEmpty() ? "Data not available" : name) + System.lineSeparator() +
-                "Employer: " + ((employer == null || employer.getValue() == null || employer.getValue().isEmpty()) ? "Data not available" : employer) + System.lineSeparator() +
-                "Location: " + ((location == null || location.getValue() == null || location.getValue().isEmpty()) ? "Data not available" : location) + System.lineSeparator() +
-                "Position Type: " + ((positionType == null || positionType.getValue() == null || positionType.getValue().isEmpty()) ? "Data not available" : positionType) + System.lineSeparator() +
-                "Core Competency: " + ((coreCompetency == null || coreCompetency.getValue() == null || coreCompetency.getValue().isEmpty()) ? "Data not available" : coreCompetency) +
-                System.lineSeparator();
     }
 }
